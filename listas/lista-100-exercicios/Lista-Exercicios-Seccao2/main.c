@@ -5,6 +5,7 @@
 #include <string.h>
 
 //==============Headers==============
+#include "utils/utils.h"
 #include "sections/section2.h"
 
 
@@ -20,30 +21,52 @@
  */
 
 int main (){
-	int opcao = 2;
+	int opcao = 1;
+
+	WaitForEnter();
 
 	while(opcao!=0){
-		switch(ReadOption()){
-			case 2:  //faz a seccao 2
-				printf("iniciando a seccao 2...\n\n"); 
+		switch(opcao = ReadOption()){
+			case 1:
+				ClearScreen();
+				ShowSectionMessage(1);
+				section1();
+				continue;
+
+			case 2:
+				ClearScreen();
+				ShowSectionMessage(2);
 				section2();
 				continue;
 
+			case 3:
+				ClearScreen();
+				ShowSectionMessage(3);
+				section3();
+				continue;
+
+			case 4:
+				ClearScreen();
+				ShowSectionMessage(4);
+				section4();
+				continue;
+			
+			case 5:
+				ClearScreen();
+				ShowSectionMessage(5);
+				section5();
+				continue;
+			
+			case 0:
+				ClearScreen();
+				ShowExitMessage();
+				break;
 			default://caso o usuario digite uma seccao invalida
-				printf("digite uma opcao valida \n\n");
+				ClearScreen();
+				ShowInvalidOptionMessage();
+				continue;
 		}
 
 	}
 	return (0);
-}
-
-void ShowMenuMessage(void){
-	printf("digite qual a seccao desejada (2 a 5), digite para sair 0 \n");
-}
-
-int ReadOption(void){
-	int option;
-	ShowMenuMessage();
-	scanf("%d", &option);
-	return option;
 }

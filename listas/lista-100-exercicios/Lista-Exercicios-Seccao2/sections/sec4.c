@@ -1,17 +1,4 @@
-#include <stdio.h>
-#include <math.h>
-#define pi 3.14159265359
 
-
-void case4(void);
-
-
-
-int main (){
-	case4();
-
-	return (0);
-}
 void case4(void){
 
 	//variaveis local da funcao
@@ -151,8 +138,8 @@ void case4(void){
 				scanf("%f",&b);
 				a=0;
 				for(int i=1;i<=b;i++){
-					if((2*i*M_PI −1)!=0)
-						a+=(i+2*M_PI)/(2*i*M_PI −1);
+					if((2*i*M_PI-1)!=0)
+						a+=(i+2*M_PI)/(2*i*M_PI-1);
 				}
 				printf("somatorio : %f\n",a);
 
